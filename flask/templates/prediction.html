@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+ {% block head %}
+
+ {%endblock%}
+
+ 
+ {% block content %}{%endblock%}
+ {% block image %}{%endblock%}
+ {% block body %}
+ <center>
+ 	{% if data==0 %}
+
+ 	<h2>you are free from heart disease</h2><br><br>
+ 	 <img height="300px" width="300px" src="static/images/happy.png">
+ 	{% else %}
+ 	<h2>you are affected in heart disease</h2>
+ 	 <img src="static/images/hrt.jpg">
+
+ 	{% endif %}
+ </center>
+ {% endblock %}

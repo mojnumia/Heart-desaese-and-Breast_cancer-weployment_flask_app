@@ -1,0 +1,83 @@
+
+{% extends "base.html" %}
+ {% block head %}
+ <link rel="stylesheet" type="text/css" href="static/css/breast.css">
+ {%endblock%}
+
+ 
+ {% block content %}{%endblock%}
+ {% block image %}{%endblock%}
+ {% block body %}
+
+<div class="content">
+    	<h2>Input your data and predict your Breast cancer</h2>
+    	
+    </div>
+    <div class="data">
+    	<form  method="POST", action="{{url_for('second.bpredict')}}">
+    		<label class="agelabel">radius_mean </label>
+    		<input class="age" type="text" name="a"><br><br>
+    		<label for="chol" class="cl" >perimeter_mean</label>
+    		<input class=" chol" type="text" name="b"><br><br>
+    		<label class="bl">area_mean </label>
+    		<input class="bps"  type="text" name="c"><br><br>
+    		<label class="dl">concavity_mean </label>
+    		<input class="sex" type="text" name="d"><br><br>
+    		<label class="el">concave points_mean</label>
+    		<input class="thal" type="text" name="e"><br><br>
+    		<label class="fl">radius_se </label>
+    		<input class="fps" type="text" name="f"><br><br>
+    		<label class="gl">area_se </label>
+    		<input class="x" type="text" name="g"><br><br>
+    		<label class="hl">radius_worst </label>
+    		<input class="y"  type="text" name="h"><br><br>
+    		<label class="il">texture_worst </label>
+    		<input class="r" type="text" name="i"><br><br>
+    		<label class="jl">perimeter_worst</label>
+    		<input class="h" type="text" name="j"><br><br>
+            <label for="d" class="kl">area_worst</label>
+            <input class="d" type="text" name="k"><br><br>
+            <label for="e" class="ll">compactness_worst</label>
+            <input class="e" type="text" name="l"><br><br>
+            <label for="f" class="ml">	concavity_worst</label>
+            <input class="f" type="text" name="m"><br><br>
+            <label for="g" class="nl">concave points_worst</label>
+            <input class="g" type="text" name="n">
+
+            <br><br>
+    
+            <input class="sub" type="submit" name="submit" value="predict here">
+    		
+    	</form>
+    	
+    </div>
+
+    <div align="center">
+    	<h2 style="font-size: 20px;margin-top: 10px">Attribute Information:</h2><br>
+<p style="font-size: 16px">
+1) ID number<br>
+2) Diagnosis (M = malignant, B = benign)
+3-32)
+<br>
+Ten real-valued features are computed for each cell nucleus:<br>
+
+a) radius (mean of distances from center to points on the perimeter)<br>
+b) texture (standard deviation of gray-scale values)<br>
+c) perimeter<br>
+d) area<br>
+e) smoothness (local variation in radius lengths)<br>
+f) compactness (perimeter^2 / area - 1.0)<br>
+g) concavity (severity of concave portions of the contour)<br>
+h) concave points (number of concave portions of the contour)M<br>
+i) symmetry<br>
+j) fractal dimension ("coastline approximation" - 1)<br>
+
+The mean, standard error and "worst" or largest (mean of the three<br>
+largest values) of these features were computed for each image,<br>
+resulting in 30 features. For instance, field 3 is Mean Radius, field
+13 is Radius SE, field 23 is Worst Radius.<br>
+
+All feature values are recoded with four significant digits.
+</p>
+    </div>
+{% endblock %}

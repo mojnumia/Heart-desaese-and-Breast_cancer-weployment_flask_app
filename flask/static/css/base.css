@@ -1,0 +1,88 @@
+*{
+  margin: 0px;
+  padding: 0px;
+
+}
+body{
+  background-image: url("/static/images/doctor.jpg");
+}
+
+
+.container{
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+
+}
+
+@media(min-width:576px ){
+  .container{
+    max-width: 540px;
+  }
+}
+
+@media(min-width:768px ){
+  .container{
+    max-width: 720px;
+  }
+}
+@media(min-width:992px){
+  .container{
+    max-width: 960px;
+  }
+}
+@media(min-width:1200px ){
+  .container{
+    max-width: 1152px;
+  }
+}
+
+header.topbar{
+  background:gray; 
+  color: blue;
+  padding: .90rem 0;
+}
+header.topbar .auth > div a{
+  color:#1f70a6; 
+  text-decoration: none;
+  font-size:28px
+
+}
+header.topbar .container> div a{
+  color:#23074a; 
+  text-decoration: none;
+  font-size:28px
+
+}
+
+header.topbar .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+header.topbar .container .auth{
+  display: flex;
+}
+header.topbar .container .auth .divider{
+  padding: 0.5rem .3rem;
+}
+.content{
+  margin-top: 30px;
+  text-align: center;
+  
+}
+.content h2{
+  font-family: sans-serif;
+  font-size: 50px;
+  color:#8ab7d1 ;
+}
+.image{
+  align-content: center;
+  margin-top: 30px;
+  margin-left: 100px;
+}
+.image img{
+  width: 500px;
+  height: 500px;
+}

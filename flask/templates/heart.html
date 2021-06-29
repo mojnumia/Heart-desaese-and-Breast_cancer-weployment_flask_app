@@ -1,0 +1,138 @@
+ {% extends "base.html" %}
+ {% block head %}
+ <link rel="stylesheet" type="text/css" href="static/css/heart.css">
+ {%endblock%}
+
+ 
+ {% block content %}{%endblock%}
+ {% block image %}{%endblock%}
+ {% block body %}
+    <div class="content">
+    	<h2>Input your data and predict your heart disease</h2>
+    	
+    </div>
+    <div class="data">
+    	<form  method="POST", action="{{url_for('second.hpredict')}}">
+    		<label class="agelabel" >age</label>
+    		<input class="age" type="text" placeholder="age" name="a">
+    		<label for="chol" class="cl" >chol</label>
+    		<input class=" chol" type="text" placeholder="cholestoral in mg/dl" name="b">
+    		<label class="bl">bps</label>
+    		<input class="bps"  type="text" placeholder="  blood pressure mm Hg" name="c">
+    		<label class="dl">sex</label>
+    		<select class="sex"  name="d">
+                <option value="1">male</option>
+                 <option value="0">female</option>
+                
+            </select> <br>
+
+    		<label class="el">thal</label>
+    	
+            <select class="thal"  name="e">
+                <option value="1">3-normal</option>
+                <option value="2">6-fixed defect</option>
+                <option value="3">7-reversible defect</option>
+                
+            </select>
+
+
+
+    		<label class="fl">fbs</label>
+    		<select class="fps"  name="f">
+                 <option value="0">blood sugar > 120 mg/dl</option>
+                 <option value="1">blood sugar < 120 mg/dl</option> 
+                    
+                
+            </select>
+    		<label class="gl">   restecg</label>
+    		<select class="x" name="g">
+                <option value="0">normal</option>
+                <option value="1">ST_T abnormality</option>
+                <option value="2">showing hypertrophy</option>
+                
+            </select>
+    		<label class="hl">cp</label>
+    		<select class="y"  name="h">
+
+                 <option value="1">typical-angina</option>
+                 <option value="2">atypical-angina</option> 
+                 <option value="3">non-angical pain</option> 
+                 <option value="4">asymptomatic</option>   
+                    
+            </select>
+    		<label class="il">slope</label>
+    		<select class="r"  name="i">
+                 <option value="1">up-sloping</option>
+                 <option value="2">flat</option> 
+                 <option value="3">down-sloping</option>     
+            </select>
+    		<label class="jl">ca</label>
+    		<select class="h" name="j">
+                <option value="0">major vessels 0</option>
+                <option value="1">major vessels 1</option>
+                <option value="2">major vessels 2</option>
+                <option value="3">major vessels 3</option>
+                
+            </select>
+            <label for="d" class="kl">thalach</label>
+            <input class="d" type="text" placeholder="heart rate" name="k">
+            <label for="e" class="ll">exang</label>
+            <select class="e" name="l">
+                <option value="1">angina due to exercise</option>
+                 <option value="0">non-angina due to exercise</option>
+            </select>
+            <label for="f" class="ml">old-peak</label>
+            <input class="f" type="text" placeholder="ST depression" name="m">
+            <br>
+    
+            <input class="sub" type="submit" name="submit" value="predict here">
+    		
+    	</form>
+    	
+    </div>
+    <div class="feature">
+        <div class="headder">
+            <h2 align="center">Read the following statement for predicting</h2>
+            
+        </div>
+        <div class="data">
+            <h2>
+                
+
+                Features in our data:<br>
+
+                    1.  (age) <br>
+                    2.  (sex) =  sex (1 = male; 0 = female) <br>
+                    3.  (cp) = chest pain type<br>
+                                -- Value 1: typical angina<br>
+                                -- Value 2: atypical angina<br>
+                                -- Value 3: non-anginal pain<br>
+                                -- Value 4: asymptomatic<br>
+
+                    4. (trestbps): resting blood pressure (in mm Hg on admission to the hospital) <br>
+                    5. (chol) = serum cholestoral in mg/dl <br>
+                    6.  (fbs) =  (fasting blood sugar > 120 mg/dl) (1 = true; 0 = false) <br>
+
+                    7. (restecg): resting electrocardiographic results<br>
+                        -- Value 0: normal<br>
+                        -- Value 1: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)<br>
+                        -- Value 2: showing probable or definite left ventricular hypertrophy by Estes' criteria <br>
+                    8. (thalach): maximum heart rate achieved <br>
+                    9.  (exang): exercise induced angina (1 = yes; 0 = no) <br>
+                    10.  (oldpeak):ST depression induced by exercise relative to rest <br>
+                    11.  (slope):the slope of the peak exercise ST segment<br>
+                            -- Value 1: upsloping<br>
+                            -- Value 2: flat<br>
+                            -- Value 3: downsloping <br>
+                    12. (ca):number of major vessels (0-3) colored by flourosopy <br>
+                    13. (thal):  3 = normal; 6 = fixed defect; 7 = reversable defect 
+                    
+
+
+            </h2>
+        </div>
+    </div>
+    {% endblock %}
+
+
+ 
